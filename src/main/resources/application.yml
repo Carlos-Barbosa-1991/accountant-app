@@ -1,0 +1,35 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/accountant?useSSL=false&useTimezone=true&serverTimezone=GMT-3&allowPublicKeyRetrieval=true
+    username: admin
+    password: admin
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+twoPercentFine:
+  startDay: 1
+  finishDay: 3
+  finePercentage: 0.02
+  interestPercentagePerDay: 0.001
+
+threePercentFine:
+  startDay: 3
+  finishDay: 5
+  finePercentage: 0.03
+  interestPercentagePerDay: 0.002
+
+fivePercentFine:
+  startDay: 5
+  finePercentage: 0.05
+  interestPercentagePerDay: 0.003
